@@ -12,7 +12,7 @@
                     <div class="col-md-8">
                         <select class="custom-select form-control @error('CodFormsPredpr') is-invalid @enderror" id="CodFormsPredpr"  name="CodFormsPredpr">
                             @foreach($legalForms as $legalForm)
-                                @if ($legalForm->id === old('CodFormsPredpr'))
+                                @if ($legalForm->id === (int)old('CodFormsPredpr'))
                                     <option selected value="{{ $legalForm->id }}">{{ $legalForm->FormaPredpr }}</option>
                                 @else
                                     <option value="{{ $legalForm->id }}">{{ $legalForm->FormaPredpr }}</option>

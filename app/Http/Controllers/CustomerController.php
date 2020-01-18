@@ -43,7 +43,12 @@ class CustomerController extends Controller
 
     public function store(CustomerRequest $request)
     {
-
+        $result = $this->customer->newRecord($request->all());
+        if ($result) {
+            return redirect()->route('customers.index')->with('success', __('flash.success_save'));
+        } else {
+            return redirect()->route('customers.create')->with('error', $result);
+        }
     }
 
     public function updateRecord($id, CustomerRequest $request)

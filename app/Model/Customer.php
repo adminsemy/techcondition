@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\Integer;
+use phpDocumentor\Reflection\Types\This;
 
 /**
  * @property mixed CodFormsPredpr
@@ -66,32 +67,52 @@ class Customer extends Model
     public function updateRecord(int $id, array $data)
     {
         try {
-            $result = Customer::all()->find($id);
-            $result->CodFormsPredpr = $data['CodFormsPredpr'];
-            $result->Familiya = $data['Familiya'];
-            $result->Imya = $data['Imya'];
-            $result->Otchestvo = $data['Otchestvo'];
-            $result->Gorod = $data['Gorod'];
-            $result->Adres = $data['Adres'];
-            $result->Telefon = $data['Telefon'];
-            $result->Seria = $data['Seria'];
-            $result->Nomer = $data['Nomer'];
-            $result->Data = $data['Data'];
-            $result->KemVidan = $data['KemVidan'];
-            $result->NaimenOrg = $data['NaimenOrg'];
-            $result->VLice = $data['VLice'];
-            $result->NaOsnovanii = $data['NaOsnovanii'];
-            $result->INN = $data['INN'];
-            $result->KPP = $data['KPP'];
-            $result->RS = $data['RS'];
-            $result->Bank = $data['Bank'];
-            $result->BIK = $data['BIK'];
-            $result->KS = $data['KS'];
-            $result->OKPO = $data['OKPO'];
+            $result = $this->fieldMatching(Customer::all()->find($id), $data);
             $result->save();
             return true;
         } catch (\DomainException $e) {
             return $e->getMessage();
         }
+    }
+
+    public function newRecord(array $data)
+    {
+        try {
+            $result = $this->fieldMatching(new Customer, $data);
+            $increment = 1;
+            $result->id = Customer::all()->max('id') + $increment;
+            $result->CodRES = 11;
+            $result->save();
+            return true;
+        } catch (\DomainException $e) {
+            return $e->getMessage();
+        }
+    }
+
+    private function fieldMatching(Model $result, array $data): object
+    {
+        $result->CodFormsPredpr = $data['CodFormsPredpr'];
+        $result->Familiya = $data['Familiya'];
+        $result->Imya = $data['Imya'];
+        $result->Otchestvo = $data['Otchestvo'];
+        $result->Gorod = $data['Gorod'];
+        $result->Adres = $data['Adres'];
+        $result->Telefon = $data['Telefon'];
+        $result->Seria = $data['Seria'];
+        $result->Nomer = $data['Nomer'];
+        $result->Data = $data['Data'];
+        $result->KemVidan = $data['KemVidan'];
+        $result->NaimenOrg = $data['NaimenOrg'];
+        $result->VLice = $data['VLice'];
+        $result->NaOsnovanii = $data['NaOsnovanii'];
+        $result->INN = $data['INN'];
+        $result->KPP = $data['KPP'];
+        $result->RS = $data['RS'];
+        $result->Bank = $data['Bank'];
+        $result->BIK = $data['BIK'];
+        $result->KS = $data['KS'];
+        $result->OKPO = $data['OKPO'];
+
+        return $result;
     }
 }

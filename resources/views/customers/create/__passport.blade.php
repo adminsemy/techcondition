@@ -8,7 +8,7 @@
                     <label for="Seria" class="col-md-2 col-form-label text-md-right">{{ __('messages.Passport_Series') }}</label>
 
                     <div class="col-md-2">
-                        <input id="Seria" type="text" class="form-control @error('Seria') is-invalid @enderror" name="Seria" value="{{ $customer->Seria }}"
+                        <input id="Seria" type="text" class="form-control @error('Seria') is-invalid @enderror" name="Seria" value="{{ old('Seria') }}"
                                maxlength="4" autocomplete="Seria" autofocus>
 
                         @error('Seria')
@@ -20,7 +20,7 @@
                     <label for="Nomer" class="col-md-2 col-form-label text-md-right">{{ __('messages.Passport_Number') }}</label>
 
                     <div class="col-md-2">
-                        <input id="Nomer" type="text" class="form-control @error('Nomer') is-invalid @enderror" name="Nomer" value="{{ $customer->Nomer }}"
+                        <input id="Nomer" type="text" class="form-control @error('Nomer') is-invalid @enderror" name="Nomer" value="{{ old('Nomer') }}"
                                maxlength="6" autocomplete="Nomer" autofocus>
 
                         @error('Nomer')
@@ -32,7 +32,7 @@
                     <label for="Data" class="col-md-2 col-form-label text-md-right">{{ __('messages.Passport_Data_Issued') }}</label>
 
                     <div class="col-md-2">
-                        <input id="Data" type="text" class="form-control @error('Data') is-invalid @enderror" name="Data" value="{{ $customer->Data }}"
+                        <input id="Data" type="text" class="form-control @error('Data') is-invalid @enderror" name="Data" value="{{ old('Data') }}"
                                autocomplete="Data" autofocus>
 
                         @error('Data')
@@ -46,7 +46,7 @@
                     <label for="KemVidan" class="col-md-2 col-form-label text-md-right">{{ __('messages.Passport_Issued') }}</label>
 
                     <div class="col-md-10">
-                        <input id="KemVidan" type="text" class="form-control @error('KemVidan') is-invalid @enderror" name="KemVidan" value="{{ $customer->KemVidan }}"
+                        <input id="KemVidan" type="text" class="form-control @error('KemVidan') is-invalid @enderror" name="KemVidan" value="{{ old('KemVidan') }}"
                                autocomplete="KemVidan" autofocus>
 
                         @error('KemVidan')

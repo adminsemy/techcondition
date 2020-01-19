@@ -70,8 +70,8 @@ unset($__errorArgs, $__bag); ?>
                         <td><?php echo e($customer->legalForm['FormaPredpr']); ?></td>
                         <td><?php echo e($customer->Gorod); ?></td>
                         <td><?php echo e($customer->Telefon); ?></td>
-                        <td><?php echo e($customer->CodRES); ?></td>
-                        <td><a class="card-body" href="<?php echo e(route('customers.edit', $customer->id)); ?>"><?php echo e(__('messages.Edit')); ?></td>
+                        <td><?php echo e($customer->unitModel['NaimenPodrazdelenia']); ?></td>
+                        <td><a class="card-body" href="<?php echo e(route('customers.edit', $customer->id)); ?>"><?php echo e(__('messages.Edit')); ?></a></td>
                     </tr>
                     <?php ($i++); ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

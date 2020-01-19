@@ -9,7 +9,7 @@ return [
     'City' => 'Город',
     'Address' => 'Адрес',
     'Phone' => 'Телефон',
-    'Action' => 'Дествие',
+    'Action' => 'Действие',
     'Customers' => 'Заказчики',
     'Res' => 'РЭС',
     'Search' => 'Поиск',

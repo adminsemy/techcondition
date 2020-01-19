@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CustomerRequest;
 use App\Model\Customer;
 use App\Model\LegalForm;
+use App\Model\Unit;
 
 class CustomerController extends Controller
 {
     private $customer;
+    private $unit;
 
-    public function __construct(Customer $customer)
+    public function __construct(Customer $customer, Unit $unit)
     {
         $this->customer = $customer;
+        $this->unit = $unit;
     }
 
     public function index()
@@ -32,13 +35,15 @@ class CustomerController extends Controller
     {
         $customer = Customer::all()->find($id);
         $legalForms = LegalForm::query()->orderBy('FormaPredpr')->get();
-        return view('customers.edit', compact('customer', 'legalForms'));
+        $unit = $this->unit->getSelectRes();
+        return view('customers.edit', compact('customer', 'legalForms', 'unit'));
     }
 
     public function create()
     {
         $legalForms = LegalForm::query()->orderBy('FormaPredpr')->get();
-        return view('customers.create', compact('legalForms'));
+        $unit = $this->unit->getSelectRes();
+        return view('customers.create', compact('legalForms', 'unit'));
     }
 
     public function store(CustomerRequest $request)

@@ -57,8 +57,8 @@
                         <td>{{ $customer->legalForm['FormaPredpr'] }}</td>
                         <td>{{ $customer->Gorod }}</td>
                         <td>{{ $customer->Telefon }}</td>
-                        <td>{{ $customer->CodRES }}</td>
-                        <td><a class="card-body" href="{{ route('customers.edit', $customer->id) }}">{{__('messages.Edit')}}</td>
+                        <td>{{ $customer->unitModel['NaimenPodrazdelenia'] }}</td>
+                        <td><a class="card-body" href="{{ route('customers.edit', $customer->id) }}">{{__('messages.Edit')}}</a></td>
                     </tr>
                     @php($i++)
                 @endforeach

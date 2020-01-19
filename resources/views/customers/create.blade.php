@@ -7,6 +7,26 @@
             <form method="POST" id="Edit" action="{{ route('customers.store') }}">
                 @csrf
                 <div class="form-group row">
+                    <label for="CodRES" class="col-md-2 col-form-label text-md-right">{{ __('messages.Res') }}</label>
+
+                    <div class="col-md-8">
+                        <select class="custom-select form-control @error('CodRES') is-invalid @enderror" id="CodRES"  name="CodRES">
+                            @foreach($unit as $unit)
+                                @if ($unit->id === (int)old('CodRES'))
+                                    <option selected value="{{ $unit->id }}">{{ $unit->NaimenPodrazdelenia }}</option>
+                                @else
+                                    <option value="{{ $unit->id }}">{{ $unit->NaimenPodrazdelenia }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                        @error('CodRES')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="CodFormsPredpr" class="col-md-2 col-form-label text-md-right">{{ __('messages.Org_unit') }}</label>
 
                     <div class="col-md-8">

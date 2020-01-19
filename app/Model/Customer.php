@@ -31,37 +31,42 @@ use phpDocumentor\Reflection\Types\Integer;
  */
 class Customer extends Model
 {
-    const SEM_RES = 11;
-    const BOR_RES = 15;
-    const KRBAKI_RES = 12;
-    const VOSKR_RES = 13;
-    const VARN_RES = 14;
-    const ALL_RES = [self::SEM_RES, self::BOR_RES, self::KRBAKI_RES, self::VOSKR_RES, self::VARN_RES];
-
     protected $table = 'zakazchiki';
     protected $perPage = 100;
+    /**
+     * @var Unit
+     */
+    private $unit;
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        $this->unit = new Unit();
+    }
 
     public function legalForm()
     {
         return $this->belongsTo('App\Model\LegalForm', 'CodFormsPredpr');
     }
 
+    public function unitModel()
+    {
+        return $this->belongsTo('App\Model\Unit', 'CodRES');
+    }
+
     public function searchCustomers($first_name = ''): object
     {
         $customer = Customer::query()->where('Familiya', '<>', null)
             ->where('Familiya', 'like', '%' . $first_name . '%')
-            ->whereIn('CodRES', self::res())
+            ->whereIn('CodRES', $this->unit->getResAllowed())
             ->with('legalForm')
+            ->with('unitModel')
             ->orderBy('Familiya')
             ->orderBy('Imya')
             ->orderBy('Otchestvo')
             ->paginate();
         return $customer;
-    }
-
-    public static function res(): array
-    {
-        return self::ALL_RES;
     }
 
     public function updateRecord(int $id, array $data)

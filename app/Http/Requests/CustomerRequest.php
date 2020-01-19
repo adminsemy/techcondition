@@ -14,7 +14,8 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'CodFormsPredpr' => 'exists:yurformi,id',
+            'CodRES' => 'exists:App\Model\Unit,id',
+            'CodFormsPredpr' => 'exists:App\Model\LegalForm,id',
             'Familiya' => 'required|not_regex:/\s/i|string',
             'Imya' => 'required|not_regex:/\s/i|string',
             'Otchestvo' => 'required|not_regex:/\s/i|string',

@@ -2,9 +2,9 @@
 
 namespace App\Model;
 
+use DomainException;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\Integer;
-use phpDocumentor\Reflection\Types\This;
 
 /**
  * @property mixed CodFormsPredpr
@@ -48,7 +48,7 @@ class Customer extends Model
 
     public function searchCustomers($first_name = ''): object
     {
-        $customers = Customer::query()->where('Familiya', '<>', null)
+        $customer = Customer::query()->where('Familiya', '<>', null)
             ->where('Familiya', 'like', '%' . $first_name . '%')
             ->whereIn('CodRES', self::res())
             ->with('legalForm')
@@ -56,7 +56,7 @@ class Customer extends Model
             ->orderBy('Imya')
             ->orderBy('Otchestvo')
             ->paginate();
-        return $customers;
+        return $customer;
     }
 
     public static function res(): array
@@ -70,7 +70,7 @@ class Customer extends Model
             $result = $this->fieldMatching(Customer::all()->find($id), $data);
             $result->save();
             return true;
-        } catch (\DomainException $e) {
+        } catch (DomainException $e) {
             return $e->getMessage();
         }
     }
@@ -84,7 +84,7 @@ class Customer extends Model
             $result->CodRES = 11;
             $result->save();
             return true;
-        } catch (\DomainException $e) {
+        } catch (DomainException $e) {
             return $e->getMessage();
         }
     }

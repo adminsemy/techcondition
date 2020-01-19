@@ -9,6 +9,7 @@ use Adldap\AdldapInterface;
 use App\Http\Services\LdapUser;
 use App\User;
 use Auth;
+use Staticall\Petrovich\Petrovich;
 
 class UserController extends Controller
 {
@@ -31,6 +32,10 @@ class UserController extends Controller
     {
         /*$users = $this->ldap->connect()->search()->groups()->get();
         dd($users);*/
+        /*$petr = new Petrovich(Petrovich\Loader::load('../vendor/cloudloyalty/petrovich-rules/rules.json'));
+        $name = $petr->inflectLastName('Мосин', Petrovich\Ruleset::CASE_DATIVE, Petrovich\Ruleset::GENDER_MALE);
+        dd($name);*/
+
         return redirect()->home();
     }
 

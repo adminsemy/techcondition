@@ -28,3 +28,5 @@ Route::post('/customers/create', 'CustomerController@store')->name('customers.st
 Route::get('/customers/{id}', 'CustomerController@edit')->name('customers.edit');
 Route::post('/customers/{id}', 'CustomerController@updateRecord')->name('customers.update');
 
+Route::get('/tech-condition', 'TechConditionController@index')->name('tehCondition.index');
+

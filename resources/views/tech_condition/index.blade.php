@@ -53,12 +53,12 @@
                     <tr>
                         <td>{{ $i }}</td>
                         <td>{{ $techCondition->DataTU }}</td>
-                        <td>{{ $techCondition->customers['Familiya'] . ' ' . substr($techCondition->customers['Imya'], 0) . substr($techCondition->customers['Otchestvo'], 0) }}</td>
+                        <td>{{ $techCondition->customers['Familiya'] . ' ' . mb_substr('' . $techCondition->customers['Imya'], 0, 1) . '.' . mb_substr($techCondition->customers['Otchestvo'], 0, 1) . '.' }}</td>
                         <td>{{ $techCondition->NaChtoZayavka }}</td>
                         <td>{{ $techCondition->ZayavNagruzka }}</td>
                         <td>{{ $techCondition->natureLoad['KharNagruzki'] }}</td>
                         <td>{{ $techCondition->unitModel['NaimenPodrazdelenia'] }}</td>
-                        <td><a class="card-body" href="{{ route('customers.edit', $customer->id) }}">{{__('messages.Edit')}}</a></td>
+                        <td><a class="card-body" href="{{ route('customers.edit', 1) }}">{{__('messages.Edit')}}</a></td>
                     </tr>
                     @php($i++)
                 @endforeach

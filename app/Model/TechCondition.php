@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TechCondition extends Model
 {
     private $unit;
+    protected $perPage = 100;
     protected $table = "tehnicheskie_uslovia";
 
     public function __construct(array $attributes = [])
@@ -23,7 +24,7 @@ class TechCondition extends Model
 
     public function signTechCondition()
     {
-        return $this->belongsTo('App\Model\SignTechCondition', 'PriznakTU');
+        return $this->belongsTo('App\Model\SingTechCondition', 'PriznakTU');
     }
 
     public function natureLoad()
@@ -55,7 +56,7 @@ class TechCondition extends Model
             ->with('substation')
             ->with('customers')
             ->with('unitModel')
-            ->orderByDesc('DataTU')
+            ->orderByDesc('id')
             ->paginate();
         return $techCondition;
     }

@@ -16,7 +16,7 @@ class TechConditionController extends Controller
 
     public function index()
     {
-        $techConditions = $this->techCondition->searchCustomers();
+        $techConditions = $this->techCondition->searchTechCondition();
         return view('tech_condition.index', compact('techConditions'));
     }
 }

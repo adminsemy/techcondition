@@ -18,7 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/table_sort.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -40,18 +39,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ __('messages.Customers') }}<span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('customers.index') }}">
-                                    {{ __('messages.Customers') }}
-                                </a>
-                            </div>
-                        </li>
-                       {{-- @guest
+                        @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -63,7 +51,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -78,14 +66,13 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest--}}
+                        @endguest
                     </ul>
                 </div>
             </div>
         </nav>
 
         <main class="py-4">
-            @include('layouts.partials.flash')
             @yield('content')
         </main>
     </div>

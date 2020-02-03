@@ -30,3 +30,7 @@ Route::post('/customers/{id}', 'CustomerController@updateRecord')->name('custome
 
 Route::get('/tech-condition', 'TechConditionController@index')->name('tehCondition.index');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

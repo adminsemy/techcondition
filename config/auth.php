@@ -66,11 +66,18 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'ldap',
-            'model' => App\User::class,
-        ],
 
+         'users' => [
+             'driver' => 'database',
+             'table' => 'users',
+         ],
+
+        //'users' => [
+        //            'driver' => 'ldap',
+        //            'model' => App\User::class,
+        //        ],
+        //
+        //
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

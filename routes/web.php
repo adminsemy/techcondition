@@ -11,9 +11,6 @@
 |
 */
 Auth::routes([
-   'reset' => false,
-   'verify' => false,
-   'register' => false,
     ]);
 
 Route::get('/', 'LdapUserController@index');

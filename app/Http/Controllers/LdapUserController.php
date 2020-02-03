@@ -11,7 +11,7 @@ use App\User;
 use Auth;
 use Staticall\Petrovich\Petrovich;
 
-class UserController extends Controller
+class LdapUserController extends Controller
 {
     /**
      * @var Adldap

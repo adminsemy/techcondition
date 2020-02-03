@@ -16,10 +16,10 @@ Auth::routes([
    'register' => false,
     ]);
 
-Route::get('/', 'UserController@index');
+Route::get('/', 'LdapUserController@index');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/reset-password', 'UserController@resetPassword');
-Route::get('/create-user', 'UserController@createUser');
+Route::get('/reset-password', 'LdapUserController@resetPassword');
+Route::get('/create-user', 'LdapUserController@createUser');
 Route::get('/customers', 'CustomerController@index')->name('customers.index');
 Route::post('/customers/search', 'CustomerController@search')->name('customers.search');
 Route::get('/customers/search', 'CustomerController@search')->name('customers.search');

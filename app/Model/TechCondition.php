@@ -59,6 +59,6 @@ class TechCondition extends Model
             ->orderByDesc('id')
             ->paginate();
         return $techCondition;
+        
     }
-
 }

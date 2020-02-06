@@ -10,13 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes([
-    ]);
+Auth::routes();
 
-Route::get('/', 'LdapUserController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/reset-password', 'LdapUserController@resetPassword');
-Route::get('/create-user', 'LdapUserController@createUser');
 Route::get('/customers', 'CustomerController@index')->name('customers.index');
 Route::post('/customers/search', 'CustomerController@search')->name('customers.search');
 Route::get('/customers/search', 'CustomerController@search')->name('customers.search');

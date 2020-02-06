@@ -10,19 +10,19 @@
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group row">
-                            <label for="username" class="col-md-4 col-form-label text-md-right"><?php echo e(__('messages.Username')); ?></label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('E-Mail Address')); ?></label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control <?php $__errorArgs = ['username'];
+                                <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="username" value="<?php echo e(old('username')); ?>" required autocomplete="username" autofocus>
+unset($__errorArgs, $__bag); ?>" name="name" value="<?php echo e(old('name')); ?>" required autocomplete="name" autofocus>
 
-                                <?php $__errorArgs = ['username'];
+                                <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

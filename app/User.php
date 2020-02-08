@@ -11,6 +11,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const DEFAUL_ROLE = 0;
+
     /**
      * The attributes that are mass assignable.
      *

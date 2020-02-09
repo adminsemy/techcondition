@@ -20,16 +20,4 @@ class Authenticate extends Middleware
             return route('login');
         }
     }
-
-    public function boot()
-    {
-        $this->registerPolicies();
-
-        Gate::define(
-            'read-only', function ($user) {
-                return $user->isReadOnly();
-            }
-        );
-
-    }
 }

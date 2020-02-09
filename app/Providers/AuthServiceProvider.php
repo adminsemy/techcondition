@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define(
+            'read-only', function ($user) {
+                return $user->isReadOnly();
+            }
+        );
     }
 }

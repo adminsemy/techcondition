@@ -58,9 +58,9 @@
                         <td>{{ $customer->Gorod }}</td>
                         <td>{{ $customer->Telefon }}</td>
                         <td>{{ $customer->unitModel['NaimenPodrazdelenia'] }}</td>
-                        @can('read-only1')
+                        @cannot('read-only')
                         <td><a class="card-body" href="{{ route('customers.edit', $customer->id) }}">{{__('messages.Edit')}}</a></td>
-                        @endcan
+                        @endcannot
                     </tr>
                     @php($i++)
                 @endforeach

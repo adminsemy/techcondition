@@ -38,4 +38,6 @@ return [
     'Save' => 'Сохранить',
     'Delete' => 'Сохранить',
     'Create_customer' => 'Добавить заказчика',
+    'TechCondition' => 'Технические условия',
+    'TechCondition_Get' => 'Выдача тех. условий',
 ];

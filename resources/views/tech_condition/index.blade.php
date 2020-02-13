@@ -6,8 +6,8 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('customers.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.Create_customer') }}</a>
-                    <a href="{{route('customers.index')}}" class="col-md-2 btn btn-success" role="button">{{__('messages.All_records') }}</a>
+                    <a href="{{route('customers.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.TechCondition_Create') }}</a>
+                    <a href="{{route('techCondition.index')}}" class="col-md-2 btn btn-success" role="button">{{__('messages.TechCondition_Allrecords') }}</a>
                 </div>
             </div>
             <form method="POST" action="{{ route('customers.search') }}">
@@ -38,11 +38,11 @@
                 <thead>
                 <tr>
                     <th scope="col">{{ __('messages.Number')  }}</th>
-                    <th scope="col">{{ __('messages.Code_customer')  }}</th>
+                    <th scope="col">{{ __('messages.TechCondition_Date')  }}</th>
                     <th scope="col">{{ __('messages.Full_Name')  }}</th>
-                    <th scope="col">{{ __('messages.Org_unit')  }}</th>
-                    <th scope="col">{{ __('messages.City')  }}</th>
-                    <th scope="col">{{ __('messages.Phone')  }}</th>
+                    <th scope="col">{{ __('messages.TechCondition_Object')  }}</th>
+                    <th scope="col">{{ __('messages.TechCondition_Power_New')  }}</th>
+                    <th scope="col">{{ __('messages.TechCondition_Nature_Power')  }}</th>
                     <th scope="col">{{ __('messages.Res')  }}</th>
                     <th scope="col">{{ __('messages.Action')  }}</th>
                 </tr>
@@ -53,12 +53,16 @@
                     <tr>
                         <td>{{ $i }}</td>
                         <td>{{ $techCondition->DataTU }}</td>
-                        <td>{{ $techCondition->customers['Familiya'] . ' ' . mb_substr('' . $techCondition->customers['Imya'], 0, 1) . '.' . mb_substr($techCondition->customers['Otchestvo'], 0, 1) . '.' }}</td>
+                        @if ( $techCondition->CodZakazchika )
+                        <td><a href="{{ route('customers.edit', $techCondition->CodZakazchika ) }}">{{ $techCondition->customers['Familiya'] . ' ' . mb_substr('' . $techCondition->customers['Imya'], 0, 1) . '.' . mb_substr($techCondition->customers['Otchestvo'], 0, 1) . '.' }}</a></td>
+                        @else
+                        <td class="text-muted">{{__('messages.No_Data')}}</td>
+                        @endif
                         <td>{{ $techCondition->NaChtoZayavka }}</td>
                         <td>{{ $techCondition->ZayavNagruzka }}</td>
                         <td>{{ $techCondition->natureLoad['KharNagruzki'] }}</td>
                         <td>{{ $techCondition->unitModel['NaimenPodrazdelenia'] }}</td>
-                        <td><a class="card-body" href="{{ route('customers.edit', 1) }}">{{__('messages.Edit')}}</a></td>
+                        <td><a class="card-body" href="{{ route('customers.edit', 0) }}">{{__('messages.Edit')}}</a></td>
                     </tr>
                     @php($i++)
                 @endforeach

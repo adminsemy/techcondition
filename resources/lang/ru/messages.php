@@ -40,4 +40,14 @@ return [
     'Create_customer' => 'Добавить заказчика',
     'TechCondition' => 'Технические условия',
     'TechCondition_Get' => 'Выдача тех. условий',
+    'TechCondition_Allrecords' => 'Все тех. условия',
+    'TechCondition_Create' => 'Новое тех. условие',
+    'TechCondition_Object' => 'Объект',
+    'TechCondition_Power_New' => 'Вновь вводимая нагрузка',
+    'TechCondition_Max_Power' => 'Максимальная нагрузка',
+    'TechCondition_Nature_Power' => 'Характер нагрузки',
+    'TechCondition_Date' => 'Дата ТУ',
+
+    'No_Data' => 'Нет данных',
+    'Date' => 'Дата',
 ];

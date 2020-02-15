@@ -1,39 +1,44 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="card-body">
+            <div class="row justify-content-center">
+                <a href="{{route('customers.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.TechCondition_Create') }}</a>
+                <a href="{{route('techCondition.index')}}" class="col-md-2 btn btn-success" role="button">{{__('messages.TechCondition_Allrecords') }}</a>
+            </div>
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('customers.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.TechCondition_Create') }}</a>
-                    <a href="{{route('techCondition.index')}}" class="col-md-2 btn btn-success" role="button">{{__('messages.TechCondition_Allrecords') }}</a>
+                    <form method="POST" action="{{ route('customers.search') }}">
+                        @csrf
+                        <div class="form-group row">
+
+                            <label for="lastName" class="col-md-3 col-form-label text-md-right">{{ __('messages.Last_name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lastName" type="text" class="form-control @error('lastName') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" required autocomplete="lastName" autofocus>
+
+                                @error('lastName')
+                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                @enderror
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('messages.Search') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <form method="POST" action="{{ route('customers.search') }}">
-                @csrf
-                <div class="form-group row">
-
-                    <label for="lastName" class="col-md-3 col-form-label text-md-right">{{ __('messages.Last_name') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="lastName" type="text" class="form-control @error('lastName') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" required autocomplete="lastName" autofocus>
-
-                        @error('lastName')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('messages.Search') }}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            <div class="row justify-content-center">
+                {{ $techConditions->links() }}
+            </div>
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
@@ -69,11 +74,7 @@
                 </tbody>
             </table>
         </div>
-        @if ( isset($lastName) )
-            {{ $techConditions->appends(['lastName' => $lastName])->links() }}
-        @else
-            {{ $techConditions->links() }}
-        @endif
+        {{ $techConditions->links() }}
     </div>
 </div>
 @endsection

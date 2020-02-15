@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class TechCondition extends Model
@@ -39,7 +40,7 @@ class TechCondition extends Model
 
     public function substation()
     {
-        return $this->belongsTo('App\Model\Substation', 'CodPodstancii')->whereIn('№№PP',$this->unit->getResAllowed());
+        return $this->belongsTo('App\Model\Substation', 'CodPodstancii')->whereIn('№№PP', $this->unit->getResAllowed());
     }
 
     public function customers()
@@ -47,18 +48,17 @@ class TechCondition extends Model
         return $this->belongsTo('App\Model\Customer', 'CodZakazchika');
     }
 
-    public function searchTechCondition(): object
+    public function searchTechCondition($first_name = ''): object
     {
         $techCondition = TechCondition::query()->whereIn('CodPodrazdelenia', $this->unit->getResAllowed())
-            ->with('signTechCondition')
-            ->with('natureLoad')
-            ->with('connectionVoltage')
-            ->with('substation')
-            ->with('customers')
-            ->with('unitModel')
+            ->with(['customers', 'connectionVoltage', 'unitModel', 'natureLoad'])
+            ->whereHas(
+                'customers', function (Builder $query) use ($first_name) {
+                    $query->where('Familiya', 'like', '%' . $first_name . '%');
+                }
+            )
             ->orderByDesc('id')
             ->paginate();
-        return $techCondition;
-        
+        return $techCondition;      
     }
-}
+} 

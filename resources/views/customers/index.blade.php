@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="{{route('customers.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.Create_customer') }}</a>
-                    <a href="{{route('customers.index')}}" class="col-md-2 btn btn-success" role="button">{{__('messages.All_records') }}</a>
-                </div>
+            <div class="row justify-content-center">
+                <a href="{{route('customers.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.Create_customer') }}</a>
+                <a href="{{route('customers.index')}}" class="col-md-2 btn btn-success" role="button">{{__('messages.All_records') }}</a>
             </div>
             <form method="POST" action="{{ route('customers.search') }}">
                 @csrf

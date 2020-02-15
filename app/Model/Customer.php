@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use Auth;
 use DomainException;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\Integer;
@@ -86,7 +87,7 @@ class Customer extends Model
             $result = $this->fieldMatching(new Customer, $data);
             $increment = 1;
             $result->id = Customer::all()->max('id') + $increment;
-            $result->CodRES = 11;
+            $result->CodRES = Auth::user()->role;
             $result->save();
             return true;
         } catch (DomainException $e) {
@@ -94,7 +95,7 @@ class Customer extends Model
         }
     }
 
-    private function fieldMatching(Model $result, array $data): object
+    protected function fieldMatching(Model $result, array $data): object
     {
         $result->CodFormsPredpr = $data['CodFormsPredpr'];
         $result->Familiya = $data['Familiya'];

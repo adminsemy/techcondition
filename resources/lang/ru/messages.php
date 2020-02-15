@@ -47,6 +47,7 @@ return [
     'TechCondition_Max_Power' => 'Максимальная нагрузка',
     'TechCondition_Nature_Power' => 'Характер нагрузки',
     'TechCondition_Date' => 'Дата ТУ',
+    'TechCondition_Id' => 'Код ТУ',
 
     'No_Data' => 'Нет данных',
     'Date' => 'Дата',

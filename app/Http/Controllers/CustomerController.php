@@ -6,6 +6,7 @@ use App\Http\Requests\CustomerRequest;
 use App\Model\Customer;
 use App\Model\LegalForm;
 use App\Model\Unit;
+use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
@@ -25,7 +26,7 @@ class CustomerController extends Controller
         return view('customers.index', compact('customers'));
     }
 
-    public function search(CustomerRequest $request)
+    public function search(Request $request)
     {
         $lastName = $request->lastName;
         $customers = $this->customer->searchCustomers($lastName);

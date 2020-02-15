@@ -10,7 +10,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <form method="POST" action="{{ route('customers.search') }}">
+                    <form method="POST" action="{{ route('techCondition.search') }}">
                         @csrf
                         <div class="form-group row">
 
@@ -37,12 +37,17 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                {{ $techConditions->links() }}
+                @if ( isset($lastName) )
+                 {{ $techConditions->appends(['lastName' => $lastName])->links() }}
+                @else
+                 {{ $techConditions->links() }}
+                @endif
             </div>
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">{{ __('messages.Number')  }}</th>
+                    <th scope="col">{{ __('messages.TechCondition_Id')  }}</th>
                     <th scope="col">{{ __('messages.TechCondition_Date')  }}</th>
                     <th scope="col">{{ __('messages.Full_Name')  }}</th>
                     <th scope="col">{{ __('messages.TechCondition_Object')  }}</th>
@@ -57,6 +62,7 @@
                 @foreach($techConditions as $techCondition)
                     <tr>
                         <td>{{ $i }}</td>
+                        <td>{{ $techCondition->id }}</td>
                         <td>{{ $techCondition->DataTU }}</td>
                         @if ( $techCondition->CodZakazchika )
                         <td><a href="{{ route('customers.edit', $techCondition->CodZakazchika ) }}">{{ $techCondition->customers['Familiya'] . ' ' . mb_substr('' . $techCondition->customers['Imya'], 0, 1) . '.' . mb_substr($techCondition->customers['Otchestvo'], 0, 1) . '.' }}</a></td>
@@ -74,7 +80,11 @@
                 </tbody>
             </table>
         </div>
-        {{ $techConditions->links() }}
+        @if ( isset($lastName) )
+            {{ $techConditions->appends(['lastName' => $lastName])->links() }}
+        @else
+            {{ $techConditions->links() }}
+        @endif
     </div>
 </div>
 @endsection

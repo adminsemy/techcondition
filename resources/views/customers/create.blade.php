@@ -6,7 +6,11 @@
         <div class="card-body">
             <form method="POST" id="Edit" action="{{ route('customers.store') }}">
                 @csrf
+                @can('edit-res')
                 <div class="form-group row">
+                @else
+                <div class="form-group row d-none">
+                @endcan
                     <label for="CodRES" class="col-md-2 col-form-label text-md-right">{{ __('messages.Res') }}</label>
 
                     <div class="col-md-8">

@@ -32,35 +32,34 @@ class TechConditionController extends Controller
 
     public function edit($id)
     {
-        $customer = TechCondition::all()->find($id);
+        $techCondition = TechCondition::all()->find($id);
         $unit = $this->unit->getSelectRes();
-        return view('customers.edit', compact('customer', 'unit'));
+        return view('tech_condition.edit', compact('techCondition', 'unit'));
     }
 
     public function create()
     {
-        $legalForms = LegalForm::query()->orderBy('FormaPredpr')->get();
         $unit = $this->unit->getSelectRes();
-        return view('customers.create', compact('legalForms', 'unit'));
+        return view('tech_condition.create', compact('legalForms', 'unit'));
     }
 
     public function store(CustomerRequest $request)
     {
-        $result = $this->customer->newRecord($request->all());
+        $result = $this->techCondition->newRecord($request->all());
         if ($result) {
-            return redirect()->route('customers.index')->with('success', __('flash.success_save'));
+            return redirect()->route('tech_condition.index')->with('success', __('flash.success_save'));
         } else {
-            return redirect()->route('customers.create')->with('error', $result);
+            return redirect()->route('tech_condition.create')->with('error', $result);
         }
     }
 
     public function updateRecord($id, CustomerRequest $request)
     {
-        $result = $this->customer->updateRecord($id, $request->all());
+        $result = $this->techCondition->updateRecord($id, $request->all());
         if ($result) {
-            return redirect()->route('customers.edit', $id)->with('success', __('flash.success_save'));
+            return redirect()->route('tech_condition.edit', $id)->with('success', __('flash.success_save'));
         } else {
-            return redirect()->route('customers.edit', $id)->with('error', $result);
+            return redirect()->route('tech_condition.edit', $id)->with('error', $result);
         }
     }
 

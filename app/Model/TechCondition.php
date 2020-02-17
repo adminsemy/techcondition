@@ -61,4 +61,56 @@ class TechCondition extends Model
             ->paginate();
         return $techCondition;      
     }
+
+    public function updateRecord(int $id, array $data)
+    {
+        try {
+            $result = $this->fieldMatching(TechCondition::all()->find($id), $data);
+            $result->save();
+            return true;
+        } catch (DomainException $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function newRecord(array $data)
+    {
+        try {
+            $result = $this->fieldMatching(new TechCondition, $data);
+            $increment = 1;
+            $result->id = TechCondition::all()->max('id') + $increment;
+            $result->save();
+            return true;
+        } catch (DomainException $e) {
+            return $e->getMessage();
+        }
+    }
+
+    protected function fieldMatching(Model $result, array $data): object
+    {
+        $result->CodPodrazdelenia = $this->unit->currentRes($data['CodRES']);
+        $result->CodFormsPredpr = $data['CodFormsPredpr'];
+        $result->Familiya = $data['Familiya'];
+        $result->Imya = $data['Imya'];
+        $result->Otchestvo = $data['Otchestvo'];
+        $result->Gorod = $data['Gorod'];
+        $result->Adres = $data['Adres'];
+        $result->Telefon = $data['Telefon'];
+        $result->Seria = $data['Seria'];
+        $result->Nomer = $data['Nomer'];
+        $result->Data = $data['Data'];
+        $result->KemVidan = $data['KemVidan'];
+        $result->NaimenOrg = $data['NaimenOrg'];
+        $result->VLice = $data['VLice'];
+        $result->NaOsnovanii = $data['NaOsnovanii'];
+        $result->INN = $data['INN'];
+        $result->KPP = $data['KPP'];
+        $result->RS = $data['RS'];
+        $result->Bank = $data['Bank'];
+        $result->BIK = $data['BIK'];
+        $result->KS = $data['KS'];
+        $result->OKPO = $data['OKPO'];
+
+        return $result;
+    }
 } 

@@ -27,6 +27,8 @@ Route::get('/tech-condition/search', 'TechConditionController@search')->name('te
 Route::post('/tech-condition/search', 'TechConditionController@search')->name('techCondition.search');
 Route::get('/tech-condition/edit/{id}', 'TechConditionController@edit')->name('techCondition.edit');
 Route::post('/tech-condition/edit/{id}', 'TechConditionController@updateRecord')->name('techCondition.update');
+Route::get('/tech-condition/create', 'TechConditionController@create')->name('techCondition.create');
+Route::post('/tech-condition/store', 'TechConditionController@store')->name('techCondition.store');
 
 
 Auth::routes();

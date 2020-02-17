@@ -87,7 +87,6 @@ class Customer extends Model
             $result = $this->fieldMatching(new Customer, $data);
             $increment = 1;
             $result->id = Customer::all()->max('id') + $increment;
-            $result->CodRES = Auth::user()->role;
             $result->save();
             return true;
         } catch (DomainException $e) {
@@ -97,6 +96,7 @@ class Customer extends Model
 
     protected function fieldMatching(Model $result, array $data): object
     {
+        $result->CodRES = $this->unit->currentRes($data['CodRES']);
         $result->CodFormsPredpr = $data['CodFormsPredpr'];
         $result->Familiya = $data['Familiya'];
         $result->Imya = $data['Imya'];
@@ -120,5 +120,16 @@ class Customer extends Model
         $result->OKPO = $data['OKPO'];
 
         return $result;
+    }
+
+    public function isAllowedRecord($id): bool
+    {
+        $res = Customer::all()->first($id)->role;
+        $allowedRes = $this->unit->getResAllowed();
+        if (in_array($res, $allowedRes)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

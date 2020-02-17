@@ -126,4 +126,8 @@ class User extends Authenticatable
         return self::DEFAUL_ROLE === Auth::user()->role;
     }
 
+    public function isEditRes(): bool
+    {
+        return true;
+    }
 }

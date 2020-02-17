@@ -15,7 +15,7 @@ return [
     'Adres.required' => 'Поле ' . __('messages.Address') . ' обязательно для заполнения',
     'Adres.string' => 'Поле ' . __('messages.Address') . ' должно быть строковым параметром',
     'Telefon.numeric' => 'Поле ' . __('messages.Phone') . ' должно быть числом',
-    'Telefon.digits' => 'Максимальное значение поля ' . __('messages.Phone') . ' должно быть :digits символов',
+    'Telefon.digits' => 'Число символов в поле ' . __('messages.Phone') . ' должно быть :digits',
     'Seria.numeric' => 'Поле ' . __('messages.Passport_Series') . ' должно быть числом',
     'Seria.digits_between' => 'Поле ' . __('messages.Passport_Series') . ' должно иметь от :min до :max символов',
     'Seria.required_if' => 'Поле ' . __('messages.Passport_Series') . ' должно быть заполнено для физического лица',

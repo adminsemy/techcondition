@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Interfaces\EditRecordInterface;
 use Auth;
 use DomainException;
 use Illuminate\Database\Eloquent\Model;

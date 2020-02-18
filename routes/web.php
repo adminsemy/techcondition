@@ -19,7 +19,7 @@ Route::post('/customers/search', 'CustomerController@search')->name('customers.s
 Route::get('/customers/search', 'CustomerController@search')->name('customers.search');
 Route::get('/customers/create', 'CustomerController@create')->name('customers.create');
 Route::post('/customers/create', 'CustomerController@store')->name('customers.store');
-Route::get('/customers/edit/{id}', 'CustomerController@edit')->name('customers.edit');
+Route::get('/customers/edit/{id}', 'CustomerController@edit')->name('customers.edit')->middleware('edit-record:App\Model\Customer');
 Route::post('/customers/edit/{id}', 'CustomerController@updateRecord')->name('customers.update');
 
 Route::get('/tech-condition', 'TechConditionController@index')->name('techCondition.index');

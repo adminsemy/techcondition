@@ -36,7 +36,7 @@ class CustomerController extends Controller
     public function edit($id)
     {
         $unit = $this->unit->getSelectRes();
-        $customer = Customer::all()->whereIn('CodRES', $this->unit->getResAllowed())->find($id);
+        $customer = Customer::whereIn('CodRES', $this->unit->getResAllowed())->find($id);
         $legalForms = LegalForm::query()->orderBy('FormaPredpr')->get();
         return view('customers.edit', compact('customer', 'legalForms', 'unit'));
     }

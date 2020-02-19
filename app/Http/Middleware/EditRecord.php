@@ -25,7 +25,7 @@ class EditRecord
 
     public function handle($request, Closure $next, $name_model)
     {
-        $res = $name_model::all()->find($request->id)->CodRES;
+        $res = $name_model::find($request->id)->CodRES;
         $allowedRes = $this->unit->getResAllowed();
         if (! in_array($res, $allowedRes) ) {
             return redirect()->route('customers.index');

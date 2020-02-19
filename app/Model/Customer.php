@@ -87,7 +87,7 @@ class Customer extends Model
         try {
             $result = $this->fieldMatching(new Customer, $data);
             $increment = 1;
-            $result->id = Customer::all()->max('id') + $increment;
+            $result->id = Customer::max('id') + $increment;
             $result->save();
             return true;
         } catch (DomainException $e) {
@@ -125,7 +125,7 @@ class Customer extends Model
 
     public function isAllowedRecord($id): bool
     {
-        $res = Customer::all()->first($id)->role;
+        $res = Customer::first($id)->role;
         $allowedRes = $this->unit->getResAllowed();
         if (in_array($res, $allowedRes)) {
             return true;

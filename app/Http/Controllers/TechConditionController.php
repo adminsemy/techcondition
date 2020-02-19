@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Customer;
 use App\Model\TechCondition;
 use App\Model\Unit;
 use Illuminate\Http\Request;
@@ -32,9 +33,10 @@ class TechConditionController extends Controller
 
     public function edit($id)
     {
-        $techCondition = TechCondition::all()->find($id);
+        $techCondition = TechCondition::find($id);
+        $customers = Customer::all();
         $unit = $this->unit->getSelectRes();
-        return view('tech_condition.edit', compact('techCondition', 'unit'));
+        return view('tech_condition.edit', compact('techCondition', 'unit', 'customers'));
     }
 
     public function create()

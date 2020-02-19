@@ -73,7 +73,7 @@
                         <td>{{ $techCondition->ZayavNagruzka }}</td>
                         <td>{{ $techCondition->natureLoad['KharNagruzki'] }}</td>
                         <td>{{ $techCondition->unitModel['NaimenPodrazdelenia'] }}</td>
-                        <td><a class="card-body" href="{{ route('customers.edit', 0) }}">{{__('messages.Edit')}}</a></td>
+                        <td><a class="card-body" href="{{ route('techCondition.edit', $techCondition->id) }}">{{__('messages.Edit')}}</a></td>
                     </tr>
                     @php($i++)
                 @endforeach

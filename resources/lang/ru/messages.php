@@ -48,6 +48,8 @@ return [
     'TechCondition_Nature_Power' => 'Характер нагрузки',
     'TechCondition_Date' => 'Дата ТУ',
     'TechCondition_Id' => 'Код ТУ',
+    'TechCondition_Number_1' => '№ ТУ 1',
+    'TechCondition_Number_2' => '№ ТУ 2',
 
     'No_Data' => 'Нет данных',
     'Date' => 'Дата',

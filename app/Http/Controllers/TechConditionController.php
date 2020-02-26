@@ -34,7 +34,7 @@ class TechConditionController extends Controller
     public function edit($id)
     {
         $techCondition = TechCondition::find($id);
-        $customers = Customer::all();
+        $customers = Customer::all()->where('CodRES', $techCondition->CodPodrazdelenia)->sortBy('Otchestvo')->sortBy('Imya')->sortBy('Familiya');
         $unit = $this->unit->getSelectRes();
         return view('tech_condition.edit', compact('techCondition', 'unit', 'customers'));
     }

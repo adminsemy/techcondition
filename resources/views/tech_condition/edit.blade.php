@@ -41,6 +41,25 @@
                                     </span>
                         @enderror
                     </div>
+
+                    <label for="CodZakazchika" class="col-md-1 col-form-label text-md-right">{{ __('messages.Res') }}</label>
+
+                    <div class="col-md-5">
+                        <select class="custom-select form-control @error('CodZakazchika') is-invalid @enderror" id="CodZakazchika"  name="CodZakazchika">
+                            @foreach($customers as $customer)
+                                @if ($customer->id === $techCondition->CodZakazchika)
+                                    <option selected value="{{ $customer->id }}">{{ $customer->full_name }}</option>
+                                @else
+                                    <option value="{{ $customer->id }}">{{ $customer->full_name . ' ' . $customer->Gorod . ' ' . $customer->Adres }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                        @error('CodRES')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
                 </div>
                 <div class="form-group row">
                     

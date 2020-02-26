@@ -133,4 +133,9 @@ class Customer extends Model
             return false;
         }
     }
+
+    public function getFullNameAttribute()
+    {
+        return $this->Familiya . ' ' . $this->Imya . ' ' . $this->Otchestvo;
+    }
 }

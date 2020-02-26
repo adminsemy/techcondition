@@ -51,7 +51,7 @@
                     <tr>
                         <td>{{ $i }}</td>
                         <td>{{ $customer->id }}</td>
-                        <td>{{ $customer->Familiya . ' ' . $customer->Imya . ' '. $customer->Otchestvo . ' ' }}</td>
+                        <td>{{ $customer->Full_Name }}</td>
                         <td>{{ $customer->legalForm['FormaPredpr'] }}</td>
                         <td>{{ $customer->Gorod }}</td>
                         <td>{{ $customer->Telefon }}</td>

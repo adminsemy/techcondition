@@ -14,6 +14,7 @@ class TechConditionController extends Controller
 
     public function __construct(TechCondition $techCondition, Unit $unit)
     {
+        $this->middleware('auth');
         $this->techCondition = $techCondition;
         $this->unit = $unit;
     }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\ConnectionVoltage;
 use App\Model\Customer;
+use App\Model\Substation;
 use App\Model\TechCondition;
 use App\Model\Unit;
 use Illuminate\Http\Request;
@@ -37,7 +39,9 @@ class TechConditionController extends Controller
         $techCondition = TechCondition::find($id);
         $customers = Customer::all()->where('CodRES', $techCondition->CodPodrazdelenia)->sortBy('Otchestvo')->sortBy('Imya')->sortBy('Familiya');
         $unit = $this->unit->getSelectRes();
-        return view('tech_condition.edit', compact('techCondition', 'unit', 'customers'));
+        $connectionVoltages = ConnectionVoltage::all();
+        $substations = Substation::all()->where('№№PP', $techCondition->CodPodrazdelenia);
+        return view('tech_condition.edit', compact('techCondition', 'unit', 'customers', 'connectionVoltages', 'substations'));
     }
 
     public function create()

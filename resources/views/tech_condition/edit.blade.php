@@ -83,6 +83,22 @@
                                     </span>
                         @enderror
                     </div>
+                    <div class="col-md-5 offset-md-3">
+                      <select class="custom-select form-control @error('CodZakazchika') is-invalid @enderror" id="CodZakazchika"  name="CodZakazchika">
+                          @foreach($units as $unit)
+                              @if ($unit->id === $techCondition->CodPodrazdelenia)
+                                  <option selected value="{{ $unit->id }}">{{ $unit->NaimenPodrazdelenia }}</option>
+                              @else
+                                  <option value="{{ $unit->id }}">{{ $unit->NaimenPodrazdelenia }}</option>
+                              @endif
+                          @endforeach
+                      </select>
+                      @error('CodZakazchika')
+                      <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                      @enderror
+                    </div>
                 </div>
 
                 <div class="form-group row">

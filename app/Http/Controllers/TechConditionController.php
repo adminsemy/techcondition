@@ -38,10 +38,10 @@ class TechConditionController extends Controller
     {
         $techCondition = TechCondition::find($id);
         $customers = Customer::all()->where('CodRES', $techCondition->CodPodrazdelenia)->sortBy('Otchestvo')->sortBy('Imya')->sortBy('Familiya');
-        $unit = $this->unit->getSelectRes();
+        $units = $this->unit->getSelectRes();
         $connectionVoltages = ConnectionVoltage::all();
         $substations = Substation::all()->where('№№PP', $techCondition->CodPodrazdelenia);
-        return view('tech_condition.edit', compact('techCondition', 'unit', 'customers', 'connectionVoltages', 'substations'));
+        return view('tech_condition.edit', compact('techCondition', 'units', 'customers', 'connectionVoltages', 'substations'));
     }
 
     public function create()

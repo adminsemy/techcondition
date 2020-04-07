@@ -318,15 +318,15 @@
                       <div id="collapseObligationsOrganization" class="collapsing" aria-labelledby="btnObligationsOrganization" data-parent="#obligationsOrganization">
                         <div class="card-body">
                           <label for="TrebPoProekt" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source_Point') }}</label>
-                            <div class="col-md-12">
-                                <textarea id="TrebPoProekt" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" required autocomplete="TrebPoProekt" autofocus rows="10">{{ $techCondition['TrebPoProekt'] }}</textarea>
-        
-                                @error('TrebPoProekt')
-                                <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                @enderror
-                            </div>
+                          <div class="col-md-12">
+                              <textarea id="TrebPoProekt" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" required autocomplete="TrebPoProekt" autofocus rows="10">{{ $techCondition['TrebPoProekt'] }}</textarea>
+      
+                              @error('TrebPoProekt')
+                              <span class="invalid-feedback" role="alert">
+                                              <strong>{{ $message }}</strong>
+                                          </span>
+                              @enderror
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -344,7 +344,15 @@
                   
                       <div id="collapseObligationsApplicant" class="collapsing" aria-labelledby="btnObligationsApplicant" data-parent="#obligationsApplicant">
                         <div class="card-body">
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life
+                          <div class="col-md-12">
+                              <textarea id="TrebUchetEl" class="form-control @error('TrebUchetEl') is-invalid @enderror" name="TrebUchetEl" required autocomplete="TrebUchetEl" autofocus rows="10">{{ $techCondition['TrebUchetEl'] }}</textarea>
+     
+                              @error('TrebUchetEl')
+                              <span class="invalid-feedback" role="alert">
+                                              <strong>{{ $message }}</strong>
+                                          </span>
+                              @enderror
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -380,7 +388,15 @@
                   
                       <div id="collapseAdditionalDirections" class="collapsing" aria-labelledby="btnAdditionalDirections" data-parent="#additionalDirections">
                         <div class="card-body">
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life
+                          <div class="col-md-12">
+                            <textarea id="DopUkazaniya" class="form-control @error('DopUkazaniya') is-invalid @enderror" name="DopUkazaniya" required autocomplete="DopUkazaniya" autofocus rows="10">{{ $techCondition['DopUkazaniya'] }}</textarea>
+   
+                            @error('DopUkazaniya')
+                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                            @enderror
+                        </div>
                         </div>
                       </div>
                     </div>

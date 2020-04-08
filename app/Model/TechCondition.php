@@ -48,6 +48,11 @@ class TechCondition extends Model
         return $this->belongsTo('App\Model\Customer', 'CodZakazchika');
     }
 
+    public function categoyReliability()
+    {
+        return $this->belongsTo('App\Model\CategoryReliability', 'CodKatNadezhnosti');
+    }
+
     public function searchTechCondition($first_name = ''): object
     {
         $techCondition = TechCondition::query()->whereIn('CodPodrazdelenia', $this->unit->getResAllowed())

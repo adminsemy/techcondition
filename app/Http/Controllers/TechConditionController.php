@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\CategoryReliability;
 use App\Model\ConnectionVoltage;
 use App\Model\Customer;
+use App\Model\NatureLoad;
 use App\Model\Substation;
 use App\Model\TechCondition;
 use App\Model\Unit;
@@ -40,8 +42,10 @@ class TechConditionController extends Controller
         $customers = Customer::all()->where('CodRES', $techCondition->CodPodrazdelenia)->sortBy('Otchestvo')->sortBy('Imya')->sortBy('Familiya');
         $units = $this->unit->getSelectRes();
         $connectionVoltages = ConnectionVoltage::all();
+        $natureLoads = NatureLoad::all()->sortBy('KharNagruzki');
+        $categoryReliabilities = CategoryReliability::all();
         $substations = Substation::all()->where('№№PP', $techCondition->CodPodrazdelenia);
-        return view('tech_condition.edit', compact('techCondition', 'units', 'customers', 'connectionVoltages', 'substations'));
+        return view('tech_condition.edit', compact('techCondition', 'units', 'customers', 'connectionVoltages', 'substations', 'natureLoads', 'categoryReliabilities'));
     }
 
     public function create()

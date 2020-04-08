@@ -84,7 +84,7 @@
                         @enderror
                     </div>
                     <div class="col-md-5 offset-md-3">
-                      <select class="custom-select form-control @error('CodZakazchika') is-invalid @enderror" id="CodZakazchika"  name="CodZakazchika">
+                      <select class="custom-select form-control @error('CodPodrazdelenia') is-invalid @enderror" id="CodPodrazdelenia"  name="CodPodrazdelenia">
                           @foreach($units as $unit)
                               @if ($unit->id === $techCondition->CodPodrazdelenia)
                                   <option selected value="{{ $unit->id }}">{{ $unit->NaimenPodrazdelenia }}</option>
@@ -93,7 +93,7 @@
                               @endif
                           @endforeach
                       </select>
-                      @error('CodZakazchika')
+                      @error('CodPodrazdelenia')
                       <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
                                   </span>
@@ -173,15 +173,61 @@
                             <label for="CodNapryazhenia" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Connection_Voltage') }}</label>
                             <div class="col-md-1">
                                 <select class="custom-select form-control @error('CodNapryazhenia') is-invalid @enderror" id="CodNapryazhenia"  name="CodNapryazhenia">
-                                    @foreach($connectionVoltages as $connectionVoltage)
-                                        @if ($connectionVoltage['id'] === $techCondition['CodNapryazhenia'])
-                                            <option selected value="{{ $connectionVoltage['id'] }}">{{ $connectionVoltage['NaprVMestePrisoed'] }}</option>
+                                    @foreach($natureLoads as $natureLoad)
+                                        @if ($natureLoad['id'] === $techCondition['CodKharNagruzki'])
+                                            <option selected value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
                                         @else
-                                            <option value="{{ $connectionVoltage['id'] }}">{{ $connectionVoltage['NaprVMestePrisoed'] }}</option>
+                                            <option value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
                                         @endif
                                     @endforeach
                                 </select>
                                 @error('CodNapryazhenia')
+                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                @enderror
+                            </div>
+                          </div>
+                          <div class="form-group row">  
+                            <label for="Rasstoyanie" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Object_Distance') }}</label>
+                            <div class="col-md-1">
+                                <input id="Rasstoyanie" type="text" class="form-control @error('Rasstoyanie') is-invalid @enderror" name="Rasstoyanie" value="{{ $techCondition['Rasstoyanie'] }}" required autocomplete="Rasstoyanie" autofocus>
+        
+                                @error('Rasstoyanie')
+                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                @enderror
+                            </div>
+                            <label for="Character_Load" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Character_Load') }}</label>
+                            <div class="col-md-3">
+                                <select class="custom-select form-control @error('CodKharNagruzki') is-invalid @enderror" id="CodKharNagruzki"  name="CodKharNagruzki">
+                                    @foreach($natureLoads as $natureLoad)
+                                        @if ($natureLoad['id'] === $techCondition['CodKharNagruzki'])
+                                            <option selected value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
+                                        @else
+                                            <option value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('CodKharNagruzki')
+                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                @enderror
+                            </div>
+                            <label for="CodKatNadezhnosti" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Reliability_Category') }}</label>
+                            <div class="col-md-2">
+                                <select class="custom-select form-control @error('CodKatNadezhnosti') is-invalid @enderror" id="CodKatNadezhnosti"  name="CodKatNadezhnosti">
+                                    @foreach($categoryReliabilities as $categoryReliability)
+                                        @if ($categoryReliability['id'] === $techCondition['CodKatNadezhnosti'])
+                                            <option selected value="{{ $categoryReliability['id'] }}">{{ $categoryReliability['CatNadeznosti'] }}</option>
+                                        @else
+                                            <option value="{{ $categoryReliability['id'] }}">{{ $categoryReliability['CatNadeznosti'] }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('CodKatNadezhnosti')
                                 <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>

@@ -173,11 +173,11 @@
                             <label for="CodNapryazhenia" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Connection_Voltage') }}</label>
                             <div class="col-md-1">
                                 <select class="custom-select form-control @error('CodNapryazhenia') is-invalid @enderror" id="CodNapryazhenia"  name="CodNapryazhenia">
-                                    @foreach($natureLoads as $natureLoad)
-                                        @if ($natureLoad['id'] === $techCondition['CodKharNagruzki'])
-                                            <option selected value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
+                                    @foreach($connectionVoltages as $connectionVoltage)
+                                        @if ($connectionVoltage['id'] === $techCondition['CodKharNagruzki'])
+                                            <option selected value="{{ $connectionVoltage['id'] }}">{{ $connectionVoltage['NaprVMestePrisoed'] }}</option>
                                         @else
-                                            <option value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
+                                            <option value="{{ $connectionVoltage['id'] }}">{{ $connectionVoltage['NaprVMestePrisoed'] }}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -379,11 +379,10 @@
                   
                       <div id="collapseObligationsOrganization" class="collapsing" aria-labelledby="btnObligationsOrganization" data-parent="#obligationsOrganization">
                         <div class="card-body">
-                          <label for="TrebPoProekt" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source_Point') }}</label>
                           <div class="col-md-12">
-                              <textarea id="TrebPoProekt" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" autocomplete="TrebPoProekt" autofocus rows="10">{{ $techCondition['TrebPoProekt'] }}</textarea>
+                              <textarea id="TrebPoPredlog" class="form-control @error('TrebPoPredlog') is-invalid @enderror" name="TrebPoPredlog" autocomplete="TrebPoPredlog" autofocus rows="10">{{ $techCondition['TrebPoPredlog'] }}</textarea>
       
-                              @error('TrebPoProekt')
+                              @error('TrebPoPredlog')
                               <span class="invalid-feedback" role="alert">
                                               <strong>{{ $message }}</strong>
                                           </span>

@@ -44,12 +44,12 @@ class TechConditionRequest extends FormRequest
             'OsnIstESnabzh' => 'string',
             'TPOsnIstESnabzh' => 'nullable|string',
             'TrebPoProekt' => 'nullable|string',
-            'CodPodstRez' => 'nullable',
+            'CodPodstRez' => 'numeric',
             'RezIstESnabzh' => 'nullable|string',
             'TPRezIstESnabzh' => 'nullable|string',
-            'TrebPoProekt' => 'nullable|string',
+            'TrebPoPredlog' => 'nullable|string',
             'TrebUchetEl' => 'nullable|string',
-            'DopUkazaniya' => 'nullable|string'
+            'DopUkazaniya' => 'string'
         ];
     }
 

@@ -93,29 +93,32 @@ class TechCondition extends Model
 
     protected function fieldMatching(Model $result, array $data): object
     {
-        $result->CodPodrazdelenia = $this->unit->currentRes($data['CodRES']);
-        $result->CodFormsPredpr = $data['CodFormsPredpr'];
-        $result->Familiya = $data['Familiya'];
-        $result->Imya = $data['Imya'];
-        $result->Otchestvo = $data['Otchestvo'];
-        $result->Gorod = $data['Gorod'];
-        $result->Adres = $data['Adres'];
-        $result->Telefon = $data['Telefon'];
-        $result->Seria = $data['Seria'];
-        $result->Nomer = $data['Nomer'];
-        $result->Data = $data['Data'];
-        $result->KemVidan = $data['KemVidan'];
-        $result->NaimenOrg = $data['NaimenOrg'];
-        $result->VLice = $data['VLice'];
-        $result->NaOsnovanii = $data['NaOsnovanii'];
-        $result->INN = $data['INN'];
-        $result->KPP = $data['KPP'];
-        $result->RS = $data['RS'];
-        $result->Bank = $data['Bank'];
-        $result->BIK = $data['BIK'];
-        $result->KS = $data['KS'];
-        $result->OKPO = $data['OKPO'];
-
+        $result['CodPodrazdelenia'] = $this->unit->currentRes($data['CodPodrazdelenia']);
+        $result['№TU-1'] = $data['TU-1'];
+        $result['№TU-2'] = $data['TU-2'];
+        $result['DataTU'] = $data['DataTU'];
+        $result['№Zayavki'] = $data['NZayavki'];
+        $result['CodPodrazdelenia'] = $data['CodPodrazdelenia'];
+        $result['NaChtoZayavka'] = $data['NaChtoZayavka'];
+        $result['NasPunktZayavki'] = $data['NasPunktZayavki'];
+        $result['ZayavNagruzka'] = $data['ZayavNagruzka'];
+        $result['VnovNagruzka'] = $data['VnovNagruzka'];
+        $result['SuchestvNagruzka'] = $data['SuchestvNagruzka'];
+        $result['CodNapryazhenia'] = $data['CodNapryazhenia'];
+        $result['Rasstoyanie'] = $data['Rasstoyanie'];
+        $result['CodKharNagruzki'] = $data['CodKharNagruzki'];
+        $result['CodKatNadezhnosti'] = $data['CodKatNadezhnosti'];
+        $result['CodPodstancii'] = $data['CodPodstancii'];
+        $result['OsnIstESnabzh'] = $data['OsnIstESnabzh'];
+        $result['TPOsnIstESnabzh'] = $data['TPOsnIstESnabzh'];
+        $result['TrebPoProekt'] = $data['TrebPoProekt'];
+        $result['CodPodstRez'] = $data['CodPodstRez'];
+        $result['RezIstESnabzh'] = $data['RezIstESnabzh'];
+        $result['TPRezIstESnabzh'] = $data['TPRezIstESnabzh'];
+        $result['TrebPoPredlog'] = $data['TrebPoPredlog'];
+        $result['TrebUchetEl'] = $data['TrebUchetEl'];
+        $result['DopUkazaniya'] = $data['DopUkazaniya'];
+        
         return $result;
     }
 } 

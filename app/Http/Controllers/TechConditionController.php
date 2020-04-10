@@ -69,9 +69,9 @@ class TechConditionController extends Controller
     {
         $result = $this->techCondition->updateRecord($id, $request->all());
         if ($result) {
-            return redirect()->route('tech_condition.edit', $id)->with('success', __('flash.success_save'));
+            return redirect()->route('techCondition.edit', $id)->with('success', __('flash.success_save'));
         } else {
-            return redirect()->route('tech_condition.edit', $id)->with('error', $result);
+            return redirect()->route('techCondition.edit', $id)->with('error', $result);
         }
     }
 

@@ -9,7 +9,7 @@
                     <label for="TU-1" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Number_1') }}</label>
 
                     <div class="col-md-1">
-                        <input id="TU-1" type="text" class="form-control @error('TU-1') is-invalid @enderror" name="TU-1" value="{{ $techCondition['№TU-1'] }}" required autocomplete="TU-1" autofocus>
+                        <input id="TU-1" type="text" class="form-control @error('TU-1') is-invalid @enderror" name="TU-1" value="{{ $techCondition['№TU-1'] }}" autocomplete="TU-1" autofocus>
 
                         @error('TU-1')
                         <span class="invalid-feedback" role="alert">
@@ -21,7 +21,7 @@
                     <label for="TU-2" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Number_2') }}</label>
 
                     <div class="col-md-1">
-                        <input id="TU-2" type="text" class="form-control @error('TU-2') is-invalid @enderror" name="TU-2" value="{{ $techCondition['№TU-2'] }}" required autocomplete="TU-2" autofocus>
+                        <input id="TU-2" type="text" class="form-control @error('TU-2') is-invalid @enderror" name="TU-2" value="{{ $techCondition['№TU-2'] }}" autocomplete="TU-2" autofocus>
 
                         @error('TU-2')
                         <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
                     <label for="DataTU" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Date') }}</label>
 
                     <div class="col-md-1">
-                        <input id="DataTU" type="text" class="form-control @error('DataTU') is-invalid @enderror" name="DataTU" value="{{ $techCondition->DataTU }}" required autocomplete="DataTU" autofocus>
+                        <input id="DataTU" type="text" class="form-control @error('DataTU') is-invalid @enderror" name="DataTU" value="{{ $techCondition->DataTU }}" autocomplete="DataTU" autofocus>
 
                         @error('DataTU')
                         <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                 <div class="form-group row">
                     <label for="NZayavki" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Number_Propocal') }}</label>
                     <div class="col-md-1">
-                        <input id="NZayavki" type="text" class="form-control @error('NZayavki') is-invalid @enderror" name="NZayavki" value="{{ $techCondition['№Zayavki'] }}" required autocomplete="NZayavki" autofocus>
+                        <input id="NZayavki" type="text" class="form-control @error('NZayavki') is-invalid @enderror" name="NZayavki" value="{{ $techCondition['№Zayavki'] }}" autocomplete="NZayavki" autofocus>
 
                         @error('NZayavki')
                         <span class="invalid-feedback" role="alert">
@@ -75,7 +75,7 @@
 
                     <label for="DataZayavki" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Date_Propocal') }}</label>
                     <div class="col-md-1">
-                        <input id="DataZayavki" type="text" class="form-control @error('DataZayavki') is-invalid @enderror" name="DataZayavki" value="{{ $techCondition->DataZayavki }}" required autocomplete="DataZayavki" autofocus>
+                        <input id="DataZayavki" type="text" class="form-control @error('DataZayavki') is-invalid @enderror" name="DataZayavki" value="{{ $techCondition->DataZayavki }}" autocomplete="DataZayavki" autofocus>
 
                         @error('DataZayavki')
                         <span class="invalid-feedback" role="alert">
@@ -104,7 +104,7 @@
                 <div class="form-group row">
                     <label for="NaChtoZayavka" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Object') }}</label>
                     <div class="col-md-11">
-                        <input id="NaChtoZayavka" type="text" class="form-control @error('NaChtoZayavka') is-invalid @enderror" name="NaChtoZayavka" value="{{ $techCondition['NaChtoZayavka'] }}" required autocomplete="NaChtoZayavka" autofocus>
+                        <input id="NaChtoZayavka" type="text" class="form-control @error('NaChtoZayavka') is-invalid @enderror" name="NaChtoZayavka" value="{{ $techCondition['NaChtoZayavka'] }}" autocomplete="NaChtoZayavka" autofocus>
 
                         @error('NaChtoZayavka')
                         <span class="invalid-feedback" role="alert">
@@ -117,7 +117,7 @@
                 <div class="form-group row">
                     <label for="NasPunktZayavki" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Object_Address') }}</label>
                     <div class="col-md-11">
-                        <input id="NasPunktZayavki" type="text" class="form-control @error('NasPunktZayavki') is-invalid @enderror" name="NasPunktZayavki" value="{{ $techCondition['NasPunktZayavki'] }}" required autocomplete="NasPunktZayavki" autofocus>
+                        <input id="NasPunktZayavki" type="text" class="form-control @error('NasPunktZayavki') is-invalid @enderror" name="NasPunktZayavki" value="{{ $techCondition['NasPunktZayavki'] }}" autocomplete="NasPunktZayavki" autofocus>
 
                         @error('NasPunktZayavki')
                         <span class="invalid-feedback" role="alert">
@@ -142,7 +142,7 @@
                           <div class="form-group row">
                             <label for="ZayavNagruzka" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Maximum_Load') }}</label>
                             <div class="col-md-1">
-                                <input id="ZayavNagruzka" type="text" class="form-control @error('ZayavNagruzka') is-invalid @enderror" name="ZayavNagruzka" value="{{ $techCondition['ZayavNagruzka'] }}" required autocomplete="ZayavNagruzka" autofocus>
+                                <input id="ZayavNagruzka" type="text" class="form-control @error('ZayavNagruzka') is-invalid @enderror" name="ZayavNagruzka" value="{{ $techCondition['ZayavNagruzka'] }}" autocomplete="ZayavNagruzka" autofocus>
         
                                 @error('ZayavNagruzka')
                                 <span class="invalid-feedback" role="alert">
@@ -152,7 +152,7 @@
                             </div>
                             <label for="VnovNagruzka" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Again_Load') }}</label>
                             <div class="col-md-1">
-                                <input id="VnovNagruzka" type="text" class="form-control @error('VnovNagruzka') is-invalid @enderror" name="VnovNagruzka" value="{{ $techCondition['VnovNagruzka'] }}" required autocomplete="VnovNagruzka" autofocus>
+                                <input id="VnovNagruzka" type="text" class="form-control @error('VnovNagruzka') is-invalid @enderror" name="VnovNagruzka" value="{{ $techCondition['VnovNagruzka'] }}" autocomplete="VnovNagruzka" autofocus>
         
                                 @error('VnovNagruzka')
                                 <span class="invalid-feedback" role="alert">
@@ -162,7 +162,7 @@
                             </div>
                             <label for="SuchestvNagruzka" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Existing_Load') }}</label>
                             <div class="col-md-1">
-                                <input id="SuchestvNagruzka" type="text" class="form-control @error('SuchestvNagruzka') is-invalid @enderror" name="SuchestvNagruzka" value="{{ $techCondition['SuchestvNagruzka'] }}" required autocomplete="SuchestvNagruzka" autofocus>
+                                <input id="SuchestvNagruzka" type="text" class="form-control @error('SuchestvNagruzka') is-invalid @enderror" name="SuchestvNagruzka" value="{{ $techCondition['SuchestvNagruzka'] }}" autocomplete="SuchestvNagruzka" autofocus>
         
                                 @error('SuchestvNagruzka')
                                 <span class="invalid-feedback" role="alert">
@@ -191,7 +191,7 @@
                           <div class="form-group row">  
                             <label for="Rasstoyanie" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Object_Distance') }}</label>
                             <div class="col-md-1">
-                                <input id="Rasstoyanie" type="text" class="form-control @error('Rasstoyanie') is-invalid @enderror" name="Rasstoyanie" value="{{ $techCondition['Rasstoyanie'] }}" required autocomplete="Rasstoyanie" autofocus>
+                                <input id="Rasstoyanie" type="text" class="form-control @error('Rasstoyanie') is-invalid @enderror" name="Rasstoyanie" value="{{ $techCondition['Rasstoyanie'] }}" autocomplete="Rasstoyanie" autofocus>
         
                                 @error('Rasstoyanie')
                                 <span class="invalid-feedback" role="alert">
@@ -272,7 +272,7 @@
                             </div>
                             <label for="OsnIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source') }}</label>
                             <div class="col-md-6">
-                                <input id="OsnIstESnabzh" type="text" class="form-control @error('OsnIstESnabzh') is-invalid @enderror" name="OsnIstESnabzh" value="{{ $techCondition['OsnIstESnabzh'] }}" required autocomplete="OsnIstESnabzh" autofocus>
+                                <input id="OsnIstESnabzh" type="text" class="form-control @error('OsnIstESnabzh') is-invalid @enderror" name="OsnIstESnabzh" value="{{ $techCondition['OsnIstESnabzh'] }}" autocomplete="OsnIstESnabzh" autofocus>
         
                                 @error('OsnIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -284,7 +284,7 @@
                           <div class="form-group row">
                             <label for="TPOsnIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source_Point') }}</label>
                             <div class="col-md-3">
-                                <input id="TPOsnIstESnabzh" type="text" class="form-control @error('TPOsnIstESnabzh') is-invalid @enderror" name="TPOsnIstESnabzh" value="{{ $techCondition['TPOsnIstESnabzh'] }}" required autocomplete="TPOsnIstESnabzh" autofocus>
+                                <input id="TPOsnIstESnabzh" type="text" class="form-control @error('TPOsnIstESnabzh') is-invalid @enderror" name="TPOsnIstESnabzh" value="{{ $techCondition['TPOsnIstESnabzh'] }}" autocomplete="TPOsnIstESnabzh" autofocus>
         
                                 @error('TPOsnIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -294,7 +294,7 @@
                             </div>
                             <label for="TrebPoProekt" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Point_With_Offers') }}</label>
                             <div class="col-md-3">
-                                <input id="TrebPoProekt" type="text" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" value="{{ $techCondition['TrebPoProekt'] }}" required autocomplete="TrebPoProekt" autofocus>
+                                <input id="TrebPoProekt" type="text" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" value="{{ $techCondition['TrebPoProekt'] }}" autocomplete="TrebPoProekt" autofocus>
         
                                 @error('TrebPoProekt')
                                 <span class="invalid-feedback" role="alert">
@@ -341,7 +341,7 @@
                             </div>
                             <label for="RezIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Recerve_Source') }}</label>
                             <div class="col-md-6">
-                                <input id="RezIstESnabzh" type="text" class="form-control @error('RezIstESnabzh') is-invalid @enderror" name="RezIstESnabzh" value="{{ $techCondition['RezIstESnabzh'] }}" required autocomplete="RezIstESnabzh" autofocus>
+                                <input id="RezIstESnabzh" type="text" class="form-control @error('RezIstESnabzh') is-invalid @enderror" name="RezIstESnabzh" value="{{ $techCondition['RezIstESnabzh'] }}" autocomplete="RezIstESnabzh" autofocus>
         
                                 @error('RezIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -353,7 +353,7 @@
                           <div class="form-group row">
                             <label for="TPRezIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source_Point') }}</label>
                             <div class="col-md-3">
-                                <input id="TPRezIstESnabzh" type="text" class="form-control @error('TPRezIstESnabzh') is-invalid @enderror" name="TPRezIstESnabzh" value="{{ $techCondition['TPRezIstESnabzh'] }}" required autocomplete="TPRezIstESnabzh" autofocus>
+                                <input id="TPRezIstESnabzh" type="text" class="form-control @error('TPRezIstESnabzh') is-invalid @enderror" name="TPRezIstESnabzh" value="{{ $techCondition['TPRezIstESnabzh'] }}" autocomplete="TPRezIstESnabzh" autofocus>
         
                                 @error('TPRezIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -381,7 +381,7 @@
                         <div class="card-body">
                           <label for="TrebPoProekt" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source_Point') }}</label>
                           <div class="col-md-12">
-                              <textarea id="TrebPoProekt" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" required autocomplete="TrebPoProekt" autofocus rows="10">{{ $techCondition['TrebPoProekt'] }}</textarea>
+                              <textarea id="TrebPoProekt" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" autocomplete="TrebPoProekt" autofocus rows="10">{{ $techCondition['TrebPoProekt'] }}</textarea>
       
                               @error('TrebPoProekt')
                               <span class="invalid-feedback" role="alert">
@@ -407,7 +407,7 @@
                       <div id="collapseObligationsApplicant" class="collapsing" aria-labelledby="btnObligationsApplicant" data-parent="#obligationsApplicant">
                         <div class="card-body">
                           <div class="col-md-12">
-                              <textarea id="TrebUchetEl" class="form-control @error('TrebUchetEl') is-invalid @enderror" name="TrebUchetEl" required autocomplete="TrebUchetEl" autofocus rows="10">{{ $techCondition['TrebUchetEl'] }}</textarea>
+                              <textarea id="TrebUchetEl" class="form-control @error('TrebUchetEl') is-invalid @enderror" name="TrebUchetEl" autocomplete="TrebUchetEl" autofocus rows="10">{{ $techCondition['TrebUchetEl'] }}</textarea>
      
                               @error('TrebUchetEl')
                               <span class="invalid-feedback" role="alert">
@@ -451,7 +451,7 @@
                       <div id="collapseAdditionalDirections" class="collapsing" aria-labelledby="btnAdditionalDirections" data-parent="#additionalDirections">
                         <div class="card-body">
                           <div class="col-md-12">
-                            <textarea id="DopUkazaniya" class="form-control @error('DopUkazaniya') is-invalid @enderror" name="DopUkazaniya" required autocomplete="DopUkazaniya" autofocus rows="10">{{ $techCondition['DopUkazaniya'] }}</textarea>
+                            <textarea id="DopUkazaniya" class="form-control @error('DopUkazaniya') is-invalid @enderror" name="DopUkazaniya" autocomplete="DopUkazaniya" autofocus rows="10">{{ $techCondition['DopUkazaniya'] }}</textarea>
    
                             @error('DopUkazaniya')
                             <span class="invalid-feedback" role="alert">

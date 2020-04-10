@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TechConditionRequest;
 use App\Model\CategoryReliability;
 use App\Model\ConnectionVoltage;
 use App\Model\Customer;
@@ -54,7 +55,7 @@ class TechConditionController extends Controller
         return view('tech_condition.create', compact('legalForms', 'unit'));
     }
 
-    public function store(CustomerRequest $request)
+    public function store(TechConditionRequest $request)
     {
         $result = $this->techCondition->newRecord($request->all());
         if ($result) {
@@ -64,7 +65,7 @@ class TechConditionController extends Controller
         }
     }
 
-    public function updateRecord($id, CustomerRequest $request)
+    public function updateRecord($id, TechConditionRequest $request)
     {
         $result = $this->techCondition->updateRecord($id, $request->all());
         if ($result) {

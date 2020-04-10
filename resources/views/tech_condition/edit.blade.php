@@ -199,7 +199,7 @@
                                             </span>
                                 @enderror
                             </div>
-                            <label for="Character_Load" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Character_Load') }}</label>
+                            <label for="CodKharNagruzki" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Character_Load') }}</label>
                             <div class="col-md-3">
                                 <select class="custom-select form-control @error('CodKharNagruzki') is-invalid @enderror" id="CodKharNagruzki"  name="CodKharNagruzki">
                                     @foreach($natureLoads as $natureLoad)
@@ -292,11 +292,11 @@
                                             </span>
                                 @enderror
                             </div>
-                            <label for="OsnIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Point_With_Offers') }}</label>
+                            <label for="TrebPoProekt" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Point_With_Offers') }}</label>
                             <div class="col-md-3">
-                                <input id="OsnIstESnabzh" type="text" class="form-control @error('OsnIstESnabzh') is-invalid @enderror" name="OsnIstESnabzh" value="{{ $techCondition['OsnIstESnabzh'] }}" required autocomplete="OsnIstESnabzh" autofocus>
+                                <input id="TrebPoProekt" type="text" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" value="{{ $techCondition['TrebPoProekt'] }}" required autocomplete="TrebPoProekt" autofocus>
         
-                                @error('OsnIstESnabzh')
+                                @error('TrebPoProekt')
                                 <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>

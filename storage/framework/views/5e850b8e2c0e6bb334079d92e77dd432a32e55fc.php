@@ -4,6 +4,44 @@
         <div class="card-body">
             <form method="POST" id="Edit" action="<?php echo e(route('customers.update', $customer->id)); ?>">
                 <?php echo csrf_field(); ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('edit-res')): ?>
+                <div class="form-group row">
+                <?php else: ?>
+                <div class="form-group row d-none">
+                <?php endif; ?>
+                    <label for="CodRES" class="col-md-2 col-form-label text-md-right"><?php echo e(__('messages.Res')); ?></label>
+
+                    <div class="col-md-8">
+                        <select class="custom-select form-control <?php $__errorArgs = ['CodRES'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="CodRES"  name="CodRES">
+                            <?php $__currentLoopData = $unit; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if($unit->id === (int)$customer->CodRES): ?>
+                                    <option selected value="<?php echo e($unit->id); ?>"><?php echo e($unit->NaimenPodrazdelenia); ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo e($unit->id); ?>"><?php echo e($unit->NaimenPodrazdelenia); ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                        <?php $__errorArgs = ['CodRES'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo e($message); ?></strong>
+                                    </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label for="CodFormsPredpr" class="col-md-2 col-form-label text-md-right"><?php echo e(__('messages.Org_unit')); ?></label>
 

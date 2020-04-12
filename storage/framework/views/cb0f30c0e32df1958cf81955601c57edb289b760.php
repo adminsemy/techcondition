@@ -1,12 +1,10 @@
 <?php $__env->startSection('content'); ?>
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="<?php echo e(route('customers.create')); ?>" class="col-md-2 btn btn-danger" role="button"><?php echo e(__('messages.Create_customer')); ?></a>
-                    <a href="<?php echo e(route('customers.index')); ?>" class="col-md-2 btn btn-success" role="button"><?php echo e(__('messages.All_records')); ?></a>
-                </div>
+            <div class="row justify-content-center">
+                <a href="<?php echo e(route('customers.create')); ?>" class="col-md-2 btn btn-danger" role="button"><?php echo e(__('messages.Create_customer')); ?></a>
+                <a href="<?php echo e(route('customers.index')); ?>" class="col-md-2 btn btn-success" role="button"><?php echo e(__('messages.All_records')); ?></a>
             </div>
             <form method="POST" action="<?php echo e(route('customers.search')); ?>">
                 <?php echo csrf_field(); ?>
@@ -66,12 +64,14 @@ unset($__errorArgs, $__bag); ?>
                     <tr>
                         <td><?php echo e($i); ?></td>
                         <td><?php echo e($customer->id); ?></td>
-                        <td><?php echo e($customer->Familiya . ' ' . $customer->Imya . ' '. $customer->Otchestvo . ' '); ?></td>
+                        <td><?php echo e($customer->Full_Name); ?></td>
                         <td><?php echo e($customer->legalForm['FormaPredpr']); ?></td>
                         <td><?php echo e($customer->Gorod); ?></td>
                         <td><?php echo e($customer->Telefon); ?></td>
                         <td><?php echo e($customer->unitModel['NaimenPodrazdelenia']); ?></td>
+                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->denies('read-only')): ?>
                         <td><a class="card-body" href="<?php echo e(route('customers.edit', $customer->id)); ?>"><?php echo e(__('messages.Edit')); ?></a></td>
+                        <?php endif; ?>
                     </tr>
                     <?php ($i++); ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

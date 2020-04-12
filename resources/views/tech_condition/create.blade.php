@@ -104,7 +104,7 @@
                 <div class="form-group row">
                     <label for="NaChtoZayavka" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Object') }}</label>
                     <div class="col-md-11">
-                        <input id="NaChtoZayavka" type="text" class="form-control @error('NaChtoZayavka') is-invalid @enderror" name="NaChtoZayavka" value="{{ $techCondition['NaChtoZayavka'] }}" autocomplete="NaChtoZayavka" autofocus>
+                        <input id="NaChtoZayavka" type="text" class="form-control @error('NaChtoZayavka') is-invalid @enderror" name="NaChtoZayavka" value="{{ old('NaChtoZayavka') }}" autocomplete="NaChtoZayavka" autofocus>
 
                         @error('NaChtoZayavka')
                         <span class="invalid-feedback" role="alert">
@@ -117,7 +117,7 @@
                 <div class="form-group row">
                     <label for="NasPunktZayavki" class="col-md-1 col-form-label text-md-right">{{ __('messages.TechCondition_Object_Address') }}</label>
                     <div class="col-md-11">
-                        <input id="NasPunktZayavki" type="text" class="form-control @error('NasPunktZayavki') is-invalid @enderror" name="NasPunktZayavki" value="{{ $techCondition['NasPunktZayavki'] }}" autocomplete="NasPunktZayavki" autofocus>
+                        <input id="NasPunktZayavki" type="text" class="form-control @error('NasPunktZayavki') is-invalid @enderror" name="NasPunktZayavki" value="{{ old('NasPunktZayavki') }}" autocomplete="NasPunktZayavki" autofocus>
 
                         @error('NasPunktZayavki')
                         <span class="invalid-feedback" role="alert">
@@ -142,7 +142,7 @@
                           <div class="form-group row">
                             <label for="ZayavNagruzka" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Maximum_Load') }}</label>
                             <div class="col-md-1">
-                                <input id="ZayavNagruzka" type="text" class="form-control @error('ZayavNagruzka') is-invalid @enderror" name="ZayavNagruzka" value="{{ $techCondition['ZayavNagruzka'] }}" autocomplete="ZayavNagruzka" autofocus>
+                                <input id="ZayavNagruzka" type="text" class="form-control @error('ZayavNagruzka') is-invalid @enderror" name="ZayavNagruzka" value="{{ old('ZayavNagruzka') }}" autocomplete="ZayavNagruzka" autofocus>
         
                                 @error('ZayavNagruzka')
                                 <span class="invalid-feedback" role="alert">
@@ -152,7 +152,7 @@
                             </div>
                             <label for="VnovNagruzka" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Again_Load') }}</label>
                             <div class="col-md-1">
-                                <input id="VnovNagruzka" type="text" class="form-control @error('VnovNagruzka') is-invalid @enderror" name="VnovNagruzka" value="{{ $techCondition['VnovNagruzka'] }}" autocomplete="VnovNagruzka" autofocus>
+                                <input id="VnovNagruzka" type="text" class="form-control @error('VnovNagruzka') is-invalid @enderror" name="VnovNagruzka" value="{{ old('VnovNagruzka') }}" autocomplete="VnovNagruzka" autofocus>
         
                                 @error('VnovNagruzka')
                                 <span class="invalid-feedback" role="alert">
@@ -162,7 +162,7 @@
                             </div>
                             <label for="SuchestvNagruzka" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Existing_Load') }}</label>
                             <div class="col-md-1">
-                                <input id="SuchestvNagruzka" type="text" class="form-control @error('SuchestvNagruzka') is-invalid @enderror" name="SuchestvNagruzka" value="{{ $techCondition['SuchestvNagruzka'] }}" autocomplete="SuchestvNagruzka" autofocus>
+                                <input id="SuchestvNagruzka" type="text" class="form-control @error('SuchestvNagruzka') is-invalid @enderror" name="SuchestvNagruzka" value="{{ old('SuchestvNagruzka') }}" autocomplete="SuchestvNagruzka" autofocus>
         
                                 @error('SuchestvNagruzka')
                                 <span class="invalid-feedback" role="alert">
@@ -174,7 +174,7 @@
                             <div class="col-md-1">
                                 <select class="custom-select form-control @error('CodNapryazhenia') is-invalid @enderror" id="CodNapryazhenia"  name="CodNapryazhenia">
                                     @foreach($connectionVoltages as $connectionVoltage)
-                                        @if ($connectionVoltage['id'] === $techCondition['CodKharNagruzki'])
+                                        @if ($connectionVoltage['id'] === old('CodKharNagruzki'))
                                             <option selected value="{{ $connectionVoltage['id'] }}">{{ $connectionVoltage['NaprVMestePrisoed'] }}</option>
                                         @else
                                             <option value="{{ $connectionVoltage['id'] }}">{{ $connectionVoltage['NaprVMestePrisoed'] }}</option>
@@ -191,7 +191,7 @@
                           <div class="form-group row">  
                             <label for="Rasstoyanie" class="col-md-2 col-form-label text-md-right">{{ __('messages.TechCondition_Object_Distance') }}</label>
                             <div class="col-md-1">
-                                <input id="Rasstoyanie" type="text" class="form-control @error('Rasstoyanie') is-invalid @enderror" name="Rasstoyanie" value="{{ $techCondition['Rasstoyanie'] }}" autocomplete="Rasstoyanie" autofocus>
+                                <input id="Rasstoyanie" type="text" class="form-control @error('Rasstoyanie') is-invalid @enderror" name="Rasstoyanie" value="{{ old('Rasstoyanie') }}" autocomplete="Rasstoyanie" autofocus>
         
                                 @error('Rasstoyanie')
                                 <span class="invalid-feedback" role="alert">
@@ -203,7 +203,7 @@
                             <div class="col-md-3">
                                 <select class="custom-select form-control @error('CodKharNagruzki') is-invalid @enderror" id="CodKharNagruzki"  name="CodKharNagruzki">
                                     @foreach($natureLoads as $natureLoad)
-                                        @if ($natureLoad['id'] === $techCondition['CodKharNagruzki'])
+                                        @if ($natureLoad['id'] === old('CodKharNagruzki'))
                                             <option selected value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
                                         @else
                                             <option value="{{ $natureLoad['id'] }}">{{ $natureLoad['KharNagruzki'] }}</option>
@@ -220,7 +220,7 @@
                             <div class="col-md-2">
                                 <select class="custom-select form-control @error('CodKatNadezhnosti') is-invalid @enderror" id="CodKatNadezhnosti"  name="CodKatNadezhnosti">
                                     @foreach($categoryReliabilities as $categoryReliability)
-                                        @if ($categoryReliability['id'] === $techCondition['CodKatNadezhnosti'])
+                                        @if ($categoryReliability['id'] === old('CodKatNadezhnosti'))
                                             <option selected value="{{ $categoryReliability['id'] }}">{{ $categoryReliability['CatNadeznosti'] }}</option>
                                         @else
                                             <option value="{{ $categoryReliability['id'] }}">{{ $categoryReliability['CatNadeznosti'] }}</option>
@@ -257,7 +257,7 @@
                                 <select class="custom-select form-control @error('CodPodstancii') is-invalid @enderror" id="CodPodstancii"  name="CodPodstancii">
                                   <option selected value="0"></option>
                                     @foreach($substations as $substation)
-                                        @if ($substation['id'] === $techCondition['CodPodstancii'])
+                                        @if ($substation['id'] === old('CodPodstancii'))
                                             <option selected value="{{ $substation['id'] }}">{{ $substation['NazvaniePodstancii'] }}</option>
                                         @else
                                             <option value="{{ $substation['id'] }}">{{ $substation['NazvaniePodstancii'] }}</option>
@@ -272,7 +272,7 @@
                             </div>
                             <label for="OsnIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source') }}</label>
                             <div class="col-md-6">
-                                <input id="OsnIstESnabzh" type="text" class="form-control @error('OsnIstESnabzh') is-invalid @enderror" name="OsnIstESnabzh" value="{{ $techCondition['OsnIstESnabzh'] }}" autocomplete="OsnIstESnabzh" autofocus>
+                                <input id="OsnIstESnabzh" type="text" class="form-control @error('OsnIstESnabzh') is-invalid @enderror" name="OsnIstESnabzh" value="{{ old('OsnIstESnabzh') }}" autocomplete="OsnIstESnabzh" autofocus>
         
                                 @error('OsnIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -284,7 +284,7 @@
                           <div class="form-group row">
                             <label for="TPOsnIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source_Point') }}</label>
                             <div class="col-md-3">
-                                <input id="TPOsnIstESnabzh" type="text" class="form-control @error('TPOsnIstESnabzh') is-invalid @enderror" name="TPOsnIstESnabzh" value="{{ $techCondition['TPOsnIstESnabzh'] }}" autocomplete="TPOsnIstESnabzh" autofocus>
+                                <input id="TPOsnIstESnabzh" type="text" class="form-control @error('TPOsnIstESnabzh') is-invalid @enderror" name="TPOsnIstESnabzh" value="{{ old('TPOsnIstESnabzh') }}" autocomplete="TPOsnIstESnabzh" autofocus>
         
                                 @error('TPOsnIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -294,7 +294,7 @@
                             </div>
                             <label for="TrebPoProekt" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Point_With_Offers') }}</label>
                             <div class="col-md-3">
-                                <input id="TrebPoProekt" type="text" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" value="{{ $techCondition['TrebPoProekt'] }}" autocomplete="TrebPoProekt" autofocus>
+                                <input id="TrebPoProekt" type="text" class="form-control @error('TrebPoProekt') is-invalid @enderror" name="TrebPoProekt" value="{{ old('TrebPoProekt') }}" autocomplete="TrebPoProekt" autofocus>
         
                                 @error('TrebPoProekt')
                                 <span class="invalid-feedback" role="alert">
@@ -326,7 +326,7 @@
                                 <select class="custom-select form-control @error('CodPodstRez') is-invalid @enderror" id="CodPodstRez"  name="CodPodstRez">
                                   <option selected value="0"></option>
                                     @foreach($substations as $substation)
-                                        @if ($substation['id'] === $techCondition['CodPodstRez'])
+                                        @if ($substation['id'] === old('CodPodstRez'))
                                             <option selected value="{{ $substation['id'] }}">{{ $substation['NazvaniePodstancii'] }}</option>
                                         @else
                                             <option value="{{ $substation['id'] }}">{{ $substation['NazvaniePodstancii'] }}</option>
@@ -341,7 +341,7 @@
                             </div>
                             <label for="RezIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Recerve_Source') }}</label>
                             <div class="col-md-6">
-                                <input id="RezIstESnabzh" type="text" class="form-control @error('RezIstESnabzh') is-invalid @enderror" name="RezIstESnabzh" value="{{ $techCondition['RezIstESnabzh'] }}" autocomplete="RezIstESnabzh" autofocus>
+                                <input id="RezIstESnabzh" type="text" class="form-control @error('RezIstESnabzh') is-invalid @enderror" name="RezIstESnabzh" value="{{ old('RezIstESnabzh') }}" autocomplete="RezIstESnabzh" autofocus>
         
                                 @error('RezIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -353,7 +353,7 @@
                           <div class="form-group row">
                             <label for="TPRezIstESnabzh" class="col-md-3 col-form-label text-md-right">{{ __('messages.TechCondition_Main_Source_Point') }}</label>
                             <div class="col-md-3">
-                                <input id="TPRezIstESnabzh" type="text" class="form-control @error('TPRezIstESnabzh') is-invalid @enderror" name="TPRezIstESnabzh" value="{{ $techCondition['TPRezIstESnabzh'] }}" autocomplete="TPRezIstESnabzh" autofocus>
+                                <input id="TPRezIstESnabzh" type="text" class="form-control @error('TPRezIstESnabzh') is-invalid @enderror" name="TPRezIstESnabzh" value="{{ old('TPRezIstESnabzh') }}" autocomplete="TPRezIstESnabzh" autofocus>
         
                                 @error('TPRezIstESnabzh')
                                 <span class="invalid-feedback" role="alert">
@@ -380,7 +380,7 @@
                       <div id="collapseObligationsOrganization" class="collapsing" aria-labelledby="btnObligationsOrganization" data-parent="#obligationsOrganization">
                         <div class="card-body">
                           <div class="col-md-12">
-                              <textarea id="TrebPoPredlog" class="form-control @error('TrebPoPredlog') is-invalid @enderror" name="TrebPoPredlog" autocomplete="TrebPoPredlog" autofocus rows="10">{{ $techCondition['TrebPoPredlog'] }}</textarea>
+                              <textarea id="TrebPoPredlog" class="form-control @error('TrebPoPredlog') is-invalid @enderror" name="TrebPoPredlog" autocomplete="TrebPoPredlog" autofocus rows="10">{{ old('TrebPoPredlog') }}</textarea>
       
                               @error('TrebPoPredlog')
                               <span class="invalid-feedback" role="alert">
@@ -406,7 +406,7 @@
                       <div id="collapseObligationsApplicant" class="collapsing" aria-labelledby="btnObligationsApplicant" data-parent="#obligationsApplicant">
                         <div class="card-body">
                           <div class="col-md-12">
-                              <textarea id="TrebUchetEl" class="form-control @error('TrebUchetEl') is-invalid @enderror" name="TrebUchetEl" autocomplete="TrebUchetEl" autofocus rows="10">{{ $techCondition['TrebUchetEl'] }}</textarea>
+                              <textarea id="TrebUchetEl" class="form-control @error('TrebUchetEl') is-invalid @enderror" name="TrebUchetEl" autocomplete="TrebUchetEl" autofocus rows="10">{{ old('TrebUchetEl') }}</textarea>
      
                               @error('TrebUchetEl')
                               <span class="invalid-feedback" role="alert">
@@ -450,7 +450,7 @@
                       <div id="collapseAdditionalDirections" class="collapsing" aria-labelledby="btnAdditionalDirections" data-parent="#additionalDirections">
                         <div class="card-body">
                           <div class="col-md-12">
-                            <textarea id="DopUkazaniya" class="form-control @error('DopUkazaniya') is-invalid @enderror" name="DopUkazaniya" autocomplete="DopUkazaniya" autofocus rows="10">{{ $techCondition['DopUkazaniya'] }}</textarea>
+                            <textarea id="DopUkazaniya" class="form-control @error('DopUkazaniya') is-invalid @enderror" name="DopUkazaniya" autocomplete="DopUkazaniya" autofocus rows="10">{{ old('DopUkazaniya') }}</textarea>
    
                             @error('DopUkazaniya')
                             <span class="invalid-feedback" role="alert">

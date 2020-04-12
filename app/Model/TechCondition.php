@@ -97,6 +97,7 @@ class TechCondition extends Model
         $result['№TU-1'] = $data['TU-1'];
         $result['№TU-2'] = $data['TU-2'];
         $result['DataTU'] = $data['DataTU'];
+        $result['CodZakazchika'] = $data['CodZakazchika'];
         $result['№Zayavki'] = $data['NZayavki'];
         $result['CodPodrazdelenia'] = $data['CodPodrazdelenia'];
         $result['NaChtoZayavka'] = $data['NaChtoZayavka'];

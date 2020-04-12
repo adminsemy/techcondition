@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="card-body">
             <div class="row justify-content-center">
-                <a href="{{route('customers.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.TechCondition_Create') }}</a>
+                <a href="{{route('techCondition.create')}}" class="col-md-2 btn btn-danger" role="button">{{__('messages.TechCondition_Create') }}</a>
                 <a href="{{route('techCondition.index')}}" class="col-md-2 btn btn-success" role="button">{{__('messages.TechCondition_Allrecords') }}</a>
             </div>
             <div class="row">

@@ -37,7 +37,7 @@ class TechConditionRequest extends FormRequest
             'VnovNagruzka' => 'nullable|numeric',
             'SuchestvNagruzka' => 'nullable|numeric',
             'CodNapryazhenia' => 'nullable|exists:App\Model\ConnectionVoltage,id',
-            'Rasstoyanie' => 'nullable|numeric',
+            'Rasstoyanie' => 'nullable|integer',
             'CodKharNagruzki' => 'nullable|exists:App\Model\NatureLoad,id',
             'CodKatNadezhnosti' => 'nullable|exists:App\Model\CategoryReliability,id',
             'CodPodstancii' => 'exists:App\Model\Substation,id',
@@ -49,7 +49,7 @@ class TechConditionRequest extends FormRequest
             'TPRezIstESnabzh' => 'nullable|string',
             'TrebPoPredlog' => 'nullable|string',
             'TrebUchetEl' => 'nullable|string',
-            'DopUkazaniya' => 'string'
+            'DopUkazaniya' => 'nullable|string'
         ];
     }
 

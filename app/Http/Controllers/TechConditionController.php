@@ -51,17 +51,23 @@ class TechConditionController extends Controller
 
     public function create()
     {
-        $unit = $this->unit->getSelectRes();
-        return view('tech_condition.create', compact('legalForms', 'unit'));
+        $units = $this->unit->getSelectRes();
+        $unitsAllowed = $this->unit->getResAllowed();
+        $connectionVoltages = ConnectionVoltage::all();
+        $natureLoads = NatureLoad::all()->sortBy('KharNagruzki');
+        $categoryReliabilities = CategoryReliability::all();
+        $substations = Substation::all()->whereIn('№№PP', $unitsAllowed);
+        $customers = Customer::all()->whereIn('CodRES', $unitsAllowed)->sortBy('Otchestvo')->sortBy('Imya')->sortBy('Familiya');
+        return view('tech_condition.create', compact('units', 'customers', 'connectionVoltages', 'substations', 'natureLoads', 'categoryReliabilities'));
     }
 
     public function store(TechConditionRequest $request)
     {
         $result = $this->techCondition->newRecord($request->all());
         if ($result) {
-            return redirect()->route('tech_condition.index')->with('success', __('flash.success_save'));
+            return redirect()->route('techCondition.index')->with('success', __('flash.success_save'));
         } else {
-            return redirect()->route('tech_condition.create')->with('error', $result);
+            return redirect()->route('techCondition.create')->with('error', $result);
         }
     }
 
